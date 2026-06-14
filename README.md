@@ -54,5 +54,7 @@ Task                   Controls task tracking parameters. Enforces tight        
                        ($\le$ 50).                                      
                        
 TaskService            Drives active operations to add, remove, and                TaskServiceTest.java
-                       safely modify system task properties.                      
+                       safely modify system task properties.   
+
+Appointment-and-Task-Management-System-with-Comprehensive-Testing-/ │ ├── .idea/ <-- Local IDE configuration settings (ignored by Git) ├── .settings/ <-- Local project environment preferences (ignored by Git) └── SoftwareAutomation/ <-- Main Project Module Folder └── src/ <-- Source Root └── softwareAutomation_JUnit/ <-- Flattened Package Root ├── Appointment.java ├── AppointmentTest.java ├── appointmentService.java ├── appointmentServiceTest.java ├── Contact.java ├── ContactTest.java ├── ContactService.java ├── ContactServiceTest.java ├── Task.java ├── TaskTest.java └── taskService.java └── taskServiceTest.java
 
