@@ -5,7 +5,9 @@ This module encompasses the core Appointment.java business entity and its dedica
 The Appointment.java class encapsulates single reservation records and acts as the system's first line of defense against corrupted data. It implements strict validation rules using standard java.time tracking features:
 
 • Identity Guard (apptId): Automatically monitors the registration ID. It ensures keys are non-null and strictly restricted to a maximum length of 10 characters.
+
 • Time-Zone Awareness (apptDate): Utilizes ZonedDateTime variables calibrated against the host machine's execution clock. It explicitly restricts historic, back-dated timelines to prevent setting appointments in the past.
+
 • Description Limits (apptDescription): Enforces size boundaries on descriptive text blocks, blocking notes that exceed 50 characters or register as empty/null.
 
 2. Object Lifecycle Routing (Constructors)
