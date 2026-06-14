@@ -53,7 +53,7 @@ AppointmentService -   Coordinates in-memory storage, updates,
                        
 Contact -              Enforces user profile layout rules                          
                        (First Name $\le$ 10, Last Name $\le$ 10, 
-                       Phone = 10 digits, Address $\le$ 30). ContactTest.java -              
+                       Phone = 10 digits, Address $\le$ 30). - ContactTest.java -              
                        
 ContactService -       Manages unique contacts directory, preventing              
                        duplicate keys and ensuring safe record updates.
