@@ -34,10 +34,10 @@ The system relies on a comprehensive JUnit 5 unit testing layer to rigorously ve
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-Core System Components & Test Matrix
+Core System Components & Test Matrix:
 To keep the codebase modular, the system is split into three core business domains. Each domain contains a strict data-validation entity and a companion lifecycle service, fully mapped to a dedicated JUnit 5 test suite.
 
-Appointment Management
+Appointment Management:
 This featured example demonstrates the standard validation patterns used across all modules in this repository:
 The Domain Model (Appointment.java): Encapsulates single reservation records. It uses ZonedDateTime to manage timezone tracking and features four flexible constructors (Default, ID-only, ID+Date, and Full) to handle multi-stage business data.
 
