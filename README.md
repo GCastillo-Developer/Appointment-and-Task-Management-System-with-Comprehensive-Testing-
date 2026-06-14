@@ -48,21 +48,19 @@ The remaining entities follow the exact same high-integrity architecture shown a
 
 Domain / Entity        Core Business & Data Rules                                  Companion Test Suites 
 ---------------------------------------------------------------------------------------------------------------------
-AppointmentService -     Coordinates in-memory storage, updates, 
+AppointmentService -   Coordinates in-memory storage, updates, 
                        and deletion workflows for active appointments.             AppointmentServiceTest.java
                        
-Contact -                Enforces user profile layout rules                          ContactTest.java
+Contact -              Enforces user profile layout rules                          ContactTest.java
                        (First Name $\le$ 10, Last Name $\le$ 10, 
                        Phone = 10 digits, Address $\le$ 30).              
                        
-ContactService -        Manages unique contacts directory, preventing               ContactServiceTest.java
+ContactService -       Manages unique contacts directory, preventing               ContactServiceTest.java
                        duplicate keys and ensuring safe record updates.   
                        
-Task -                   Controls task tracking parameters. Enforces tight           TaskTest.java
+Task -                 Controls task tracking parameters. Enforces tight           TaskTest.java
                        boundaries on task names ($\le$ 20) and descriptions 
                        ($\le$ 50).                                      
                        
-TaskService -            Drives active operations to add, remove, and                TaskServiceTest.java
+TaskService -          Drives active operations to add, remove, and                TaskServiceTest.java
                        safely modify system task properties.   
-
-
