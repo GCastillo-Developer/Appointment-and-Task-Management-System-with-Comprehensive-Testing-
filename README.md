@@ -14,16 +14,22 @@ The Appointment.java class encapsulates single reservation records and acts as t
 To handle flexible application state creation, the class processes initialization requests through four distinct setup channels:
 
 • Default Channel: Assigns a boilerplate tracking ID ("INITIAL"), logs the instant system execution time, and attaches a generic placeholder description string.
+
 • ID-Only Channel: Sets up an appointment state containing only a verified unique identifier.
+
 • ID & Date Channel: Configures a forward-dated appointment without descriptive notes, enforcing past-date verification triggers.
+
 • Full Channel: Instantiates a complete, production-ready appointment by verifying identity parameters, target execution dates, and descriptive texts simultaneously.
 
 3. The Validation Framework (AppointmentTest.java)
 The system relies on a comprehensive JUnit 5 unit testing layer to rigorously verify that the domain class behaves correctly. Instead of checking simple paths, the suite maps directly to the entity's input boundaries:
 
 • Happy-Path Construction: Validates successful object instantiation across all four constructor methods (Default, ID-only, ID+Date, and Full) when parameters fall within normal limits.
+
 • Temporal Gatekeeping: Asserts that scheduling an appointment even one day in the past (minusDays(1)) triggers an immediate safety shutdown.
+
 • Data Size Breaches: Verifies that passing an identification string longer than 10 characters, or a descriptive field exceeding 50 characters, securely interrupts execution.
+
 • Exception Integrity: Guarantees that every failed boundary parameter accurately fires a uniform IllegalArgumentException back to the calling service.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
