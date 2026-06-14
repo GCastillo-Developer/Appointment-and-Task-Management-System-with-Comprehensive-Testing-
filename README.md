@@ -4,22 +4,22 @@ This module encompasses the core Appointment.java business entity and its dedica
 1. The Core Domain Class (Appointment.java)
 The Appointment.java class encapsulates single reservation records and acts as the system's first line of defense against corrupted data. It implements strict validation rules using standard java.time tracking features:
 
-• Identity Guard (apptId): Automatically monitors the registration ID. It ensures keys are non-null and strictly restricted to a maximum length of 10 characters.
+  • Identity Guard (apptId): Automatically monitors the registration ID. It ensures keys are non-null and strictly restricted to a maximum length of 10 characters.
 
-• Time-Zone Awareness (apptDate): Utilizes ZonedDateTime variables calibrated against the host machine's execution clock. It explicitly restricts historic, back-dated timelines to prevent setting appointments in the past.
+  • Time-Zone Awareness (apptDate): Utilizes ZonedDateTime variables calibrated against the host machine's execution clock. It explicitly restricts historic, back-dated timelines to prevent setting appointments in the past.
 
-• Description Limits (apptDescription): Enforces size boundaries on descriptive text blocks, blocking notes that exceed 50 characters or register as empty/null.
+  • Description Limits (apptDescription): Enforces size boundaries on descriptive text blocks, blocking notes that exceed 50 characters or register as empty/null.
 
 2. Object Lifecycle Routing (Constructors)
 To handle flexible application state creation, the class processes initialization requests through four distinct setup channels:
 
-• Default Channel: Assigns a boilerplate tracking ID ("INITIAL"), logs the instant system execution time, and attaches a generic placeholder description string.
+  • Default Channel: Assigns a boilerplate tracking ID ("INITIAL"), logs the instant system execution time, and attaches a generic placeholder description string.
 
-• ID-Only Channel: Sets up an appointment state containing only a verified unique identifier.
+  • ID-Only Channel: Sets up an appointment state containing only a verified unique identifier.
 
-• ID & Date Channel: Configures a forward-dated appointment without descriptive notes, enforcing past-date verification triggers.
+  • ID & Date Channel: Configures a forward-dated appointment without descriptive notes, enforcing past-date verification triggers.
 
-• Full Channel: Instantiates a complete, production-ready appointment by verifying identity parameters, target execution dates, and descriptive texts simultaneously.
+  • Full Channel: Instantiates a complete, production-ready appointment by verifying identity parameters, target execution dates, and descriptive texts simultaneously.
 
 3. The Validation Framework (AppointmentTest.java)
 The system relies on a comprehensive JUnit 5 unit testing layer to rigorously verify that the domain class behaves correctly. Instead of checking simple paths, the suite maps directly to the entity's input boundaries:
